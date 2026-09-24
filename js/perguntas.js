@@ -1,4 +1,4 @@
-const perguntas = [
+export const perguntas = [
     {
         enunciado: "A prevenção de doenças é uma das principais estratégias da saúde pública. Quais ações podem contribuir para melhorar a prevenção na comunidade?",
         alternativas: [
