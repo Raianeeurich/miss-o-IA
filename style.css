@@ -74,3 +74,24 @@ button:hover {
     font-size: 18px;
     line-height: 1.6;
 }
+
+/* Caixa de resultado: escondida durante as perguntas */
+.caixa-resultado {
+    display: none;
+    margin-top: 25px;
+}
+
+/* Exibe o resultado e o botão ao terminar o quiz */
+.caixa-resultado.mostrar {
+    display: block;
+}
+
+.texto-resultado {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Botão de jogar novamente */
+.novamente-btn {
+    margin-top: 20px;
+}

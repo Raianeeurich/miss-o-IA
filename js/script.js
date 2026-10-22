@@ -41,21 +41,21 @@ function respostaSelecionada(opcaoSelecionada) {
     atual++;
     mostraPergunta();
 }
+
 function mostraResultado() {
-caixaPerguntas.textContent = "Resultado do seu perfil de saúde:";
-textoResultado.textContent = historiaFinal.trim();
-caixaAlternativas.textContent = "";
-caixaResultado.classList.add("mostrar");
-botaoJogarNovamente.addEventListener("click", jogaNovamente);
+    caixaPerguntas.textContent = "Resultado final!";
+    textoResultado.textContent = historiaFinal.trim();
+    caixaAlternativas.textContent = "";
+    caixaResultado.classList.add("mostrar");
 }
 
 function jogaNovamente() {
-atual = 0;
-historiaFinal = "";
-caixaResultado.classList.remove("mostrar");
-mostraPergunta();
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
 }
 
-
+botaoJogarNovamente.addEventListener("click", jogaNovamente);
 
 mostraPergunta();
