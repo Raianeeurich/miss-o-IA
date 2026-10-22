@@ -13,14 +13,27 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-if (atual >= perguntas.length) {
-mostraResultado();
-return;
-}
-perguntaAtual = perguntas[atual];
-caixaPerguntas.textContent = perguntaAtual.enunciado;
-caixaAlternativas.textContent = "";
-mostraAlternativas();
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
+
+    caixaResultado.classList.remove("mostrar");
+    textoResultado.textContent = "";
+
+    const perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.innerHTML = "";
+
+    perguntaAtual.alternativas.forEach((alternativa) => {
+        const botao = document.createElement("button");
+        botao.textContent = alternativa.texto;
+        botao.addEventListener("click", () => {
+            respostaSelecionada(alternativa);
+        });
+
+        caixaAlternativas.appendChild(botao);
+    });
 }
 
 function mostraAlternativas() {
@@ -40,7 +53,7 @@ function respostaSelecionada(opcaoSelecionada) {
 
 function mostraResultado() {
     caixaPerguntas.textContent = "Resultado final!";
-    caixaAlternativas.textContent = "";
+    caixaAlternativas.innerHTML = "";
     textoResultado.textContent = historiaFinal.trim();
     caixaResultado.classList.add("mostrar");
 }
@@ -48,7 +61,11 @@ function mostraResultado() {
 function jogaNovamente() {
     atual = 0;
     historiaFinal = "";
+
     caixaResultado.classList.remove("mostrar");
+    textoResultado.textContent = "";
+    caixaAlternativas.innerHTML = "";
+
     mostraPergunta();
 }
 
