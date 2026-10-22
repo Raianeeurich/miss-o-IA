@@ -95,3 +95,12 @@ button:hover {
 .novamente-btn {
     margin-top: 20px;
 }
+
+.caixa-resultado {
+    display: none;
+    margin-top: 25px;
+}
+
+.caixa-resultado.mostrar {
+    display: block;
+}

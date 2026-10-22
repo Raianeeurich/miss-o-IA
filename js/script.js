@@ -33,19 +33,15 @@ caixaAlternativas.appendChild(botaoAlternativas);
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = Array.isArray(opcaoSelecionada.afirmacao)
-        ? aleatorio(opcaoSelecionada.afirmacao)
-        : opcaoSelecionada.afirmacao;
-
-    historiaFinal += afirmacoes + " ";
+    historiaFinal += opcaoSelecionada.afirmacao + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
     caixaPerguntas.textContent = "Resultado final!";
-    textoResultado.textContent = historiaFinal.trim();
     caixaAlternativas.textContent = "";
+    textoResultado.textContent = historiaFinal.trim();
     caixaResultado.classList.add("mostrar");
 }
 
