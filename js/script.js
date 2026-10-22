@@ -33,14 +33,16 @@ caixaAlternativas.appendChild(botaoAlternativas);
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-historiaFinal += afirmacoes + " ";
-atual++;
-mostraPergunta();
-}
+    const afirmacoes = Array.isArray(opcaoSelecionada.afirmacao)
+        ? aleatorio(opcaoSelecionada.afirmacao)
+        : opcaoSelecionada.afirmacao;
 
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
 function mostraResultado() {
-caixaPerguntas.textContent = "Em 2049...";
+caixaPerguntas.textContent = "Resultado do seu perfil de saúde:";
 textoResultado.textContent = historiaFinal.trim();
 caixaAlternativas.textContent = "";
 caixaResultado.classList.add("mostrar");
