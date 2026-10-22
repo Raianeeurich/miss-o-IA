@@ -1,3 +1,4 @@
+import { aleatorio } from './aleatorio.js';
 import { perguntas } from './perguntas.js';
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
@@ -55,5 +56,13 @@ function mostraResultado() {
     caixaAlternativas.innerHTML = "";
     botaoJogarNovamente.addEventListener("click", jogaNovamente);
 }
+
+function jogaNovamente() {
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
+}
+
 
 mostraPergunta();
